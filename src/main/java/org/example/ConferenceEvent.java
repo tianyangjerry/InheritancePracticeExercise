@@ -37,13 +37,13 @@ public class ConferenceEvent extends Event{
     public double calculateEventCost() {
         double totalCost = super.getEventCost();
         if (breakfastRequired) {
-            totalCost += breakfastCost;
+            totalCost += breakfastCost * super.getTotalParticipants() * super.getTotalEventDays();
         }
         if (lunchRequired) {
-            totalCost += lunchCost;
+            totalCost += lunchCost * super.getTotalEventDays() * super.getTotalParticipants();
         }
         if (dinnerRequired) {
-            totalCost += dinnerCost;
+            totalCost += dinnerCost * super.getTotalEventDays() * getTotalParticipants();
         }
         return totalCost;
     }

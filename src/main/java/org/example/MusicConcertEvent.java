@@ -17,7 +17,7 @@ public class MusicConcertEvent extends Event{
     public double calculateEventCost() {
         double totalCost = super.getEventCost();
         if (merchandiseRequired) {
-            totalCost += merchandiseCost * super.getTotalParticipants() * super.getTotalEventDays();//???
+            totalCost += merchandiseCost * super.getTotalParticipants() * super.getTotalEventDays();
         }
         return totalCost;
     }
