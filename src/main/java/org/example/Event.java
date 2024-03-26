@@ -1,5 +1,5 @@
 package org.example;
-public abstract class Event {
+public class Event {
     private String eventID;
     private String eventName;
     private String eventLocation;
@@ -11,7 +11,8 @@ public abstract class Event {
     public Event() {
     }
 
-    public Event(String eventID, String eventName, String eventLocation, String eventPointOfContact, double eventCost, int totalParticipants, int totalEventDays) {
+    public Event(String eventID, String eventName, String eventLocation,
+                 String eventPointOfContact, double eventCost, int totalParticipants, int totalEventDays) {
         this.eventID = eventID;
         this.eventName = eventName;
         this.eventLocation = eventLocation;
@@ -32,7 +33,18 @@ public abstract class Event {
         return totalEventDays;
     }
 
-    public abstract double calculateEventCost();
+    //public abstract double calculateEventCost();
 
-    public abstract String toString();
+    @Override
+    public String toString() {
+        return "Event{" +
+                "eventID='" + eventID + '\'' +
+                ", eventName='" + eventName + '\'' +
+                ", eventLocation='" + eventLocation + '\'' +
+                ", eventPointOfContact='" + eventPointOfContact + '\'' +
+                ", eventCost=" + eventCost +
+                ", totalParticipants=" + totalParticipants +
+                ", totalEventDays=" + totalEventDays +
+                '}';
+    }
 }
