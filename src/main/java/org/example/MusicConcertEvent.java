@@ -1,6 +1,6 @@
 package org.example;
 
-public class MusicConcertEvent extends Event{
+public class MusicConcertEvent extends Event implements CalculateEventCostInterface {
     private boolean merchandiseRequired;
     private double merchandiseCost;
 
@@ -13,12 +13,12 @@ public class MusicConcertEvent extends Event{
         this.merchandiseCost = merchandiseCost;
     }
 
-    @Override
     public double calculateEventCost() {
         double totalCost = super.getEventCost();
         if (merchandiseRequired) {
-            totalCost += merchandiseCost * super.getTotalParticipants() * super.getTotalEventDays();//???
+            totalCost += merchandiseCost * super.getTotalParticipants() * super.getTotalEventDays();
         }
+        System.out.println("Total cost of the event is: " + totalCost);
         return totalCost;
     }
 
